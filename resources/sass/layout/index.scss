@@ -1,0 +1,44 @@
+body{ background: Snow;}
+
+h1{color: brown; font-size: 40px; text-align: center;}
+
+p{font-size: 30px;}
+
+a{text-decoration: none;}
+
+input{margin: 10px; font-size: 15px;}
+
+button{border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+.butlog{ background-color: #008CBA; border-radius: 20px;}
+.butreg{ background-color: #4CAF50; border-radius: 20px;}
+
+.Postsdiv{
+    margin: 20px;
+    float: right;
+    a{text-decoration: none; color: seagreen;}
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+    width: 45%;
+    padding: 10px;
+    height: 250px; /* Should be removed. Only for demonstration */
+    background:whitesmoke;
+}
