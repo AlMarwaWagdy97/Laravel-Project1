@@ -67,6 +67,7 @@ return [
     |
     */
 
+    // Task Scheuling -> zone  ex:Africa/Cairo
     'timezone' => 'UTC',
 
     /*

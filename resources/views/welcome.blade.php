@@ -81,7 +81,33 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                   
+                    Laravel 
+
+                   {{-- Blade if --}}
+                    @check
+                        You are visitor 
+                    @else 
+                        You are User 
+                    @endcheck
+
+
+                     {{-- upload File --}}
+                    {!! Form::open(['files'=> true, 'url'=>'Upload/file']) !!}
+                    {!! Form::file('file[]', ['multiple'=>'yes']) !!}
+                    {!! Form::submit('save') !!}
+                    {!! Form::close()!!}
+
+                    @foreach ($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+
+                    <hr>
+                     {{-- storage: text area  --}} 
+                     {!! Form::open(['files'=> true, 'url'=>'textarea/file']) !!}
+                     {!! Form::textarea('text') !!}
+                     {!! Form::submit('save') !!}
+                     {!! Form::close()!!}
                 </div>
 
                 <div class="links">

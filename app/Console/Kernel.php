@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        //call command we make 
+        commands\TestCommand::class,
     ];
 
     /**
@@ -24,7 +25,15 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        //  php artisan schedule:run
         // $schedule->command('inspire')->hourly();
+        //  our Task scheduling
+        $schedule->exec('php artisan myproject:refresh')->daily();
+
+        // * * * * * cd /C:\xampp\htdocs\Projects\laravel2\artisan schedule:run >> /dev/null 2>&1
+        //  * * * * * php /xampp/htdocs/Projects/laravel2/artisan schedule:run >> /dev/null 2>&1
+
+        //  artisan myproject:refresh > "NUL" 2>&1
     }
 
     /**

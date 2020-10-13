@@ -15,6 +15,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+        // I add this
+        'App\Events\EventTest' => ['App\Listeners\EventListenerTest'],
+
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],

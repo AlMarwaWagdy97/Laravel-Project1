@@ -9,6 +9,7 @@
          <th>Title</th>
          <th>Content</th>
          <th>User ID</th>
+         <th>User Name</th>
      </tr>
      <form method="post" action="{{url('delitems/posts')}}">
          @foreach ($trashed as $item)
@@ -22,6 +23,7 @@
                  <td>{{$item->title}}</td>
                  <td>{{$item->content}}</td>
                  <td>{{$item->user_id}}</td>
+                 <td>{{$item->user_id()->first()->name}}</td>
              </tr>
          @endforeach
          <input type="submit" name="restore" value="Restore">

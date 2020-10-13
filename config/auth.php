@@ -40,7 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-
+        'admin_guard' => [
+            'driver' => 'session',
+            'provider' => 'admin',
+        ],
+        
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -69,6 +73,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'admin' => [                      // name in guard
+            'driver' => 'eloquent',
+            'model' => App\admins::class, // name in model
         ],
 
         // 'users' => [
@@ -99,6 +107,7 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+       
     ],
 
     /*

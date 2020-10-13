@@ -37,6 +37,7 @@ class pagecontroller extends Controller
 
     //print all Data base
     public function PrintALL(Request $req){
+        // return $req->segments();
         $Allposts = posts::all();
         $soft_deletes = posts::onlyTrashed()->orderBY('id', 'asc')->get();
         // $Allposts = posts::paginate(5);  // print only 5 columns
@@ -92,4 +93,10 @@ class pagecontroller extends Controller
         }
         return redirect('/allposts');
     }
+
+    // show Api
+    // public function show($id){
+    //     $post = posts::find($id);
+    //     return view('Display.index', ['post'=>$post]);
+    // }
 }

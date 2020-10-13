@@ -1,5 +1,5 @@
+{{Request::segment('1')}}
 {{-- @extends('Display.index')
-
 @section('Display_content') --}}
     <center>Data</center>
     <div class ='outdata'>
@@ -10,6 +10,7 @@
                     <th>Title</th>
                     <th>Content</th>
                     <th>User ID</th>
+                    <th>User name</th>
                 </tr>
                 <form method="post" action="{{url('delitems/posts')}}">
                     @foreach ($AllPosts as $item)
@@ -22,7 +23,8 @@
                             <td>{{$item->id}}</td>
                             <td>{{$item->title}}</td>
                             <td>{{$item->content}}</td>
-                            <td>{{(string)$item->user_id}}</td>
+                            <td>{{(string)$item->user_id()->first()->id}}</td>
+                            <td>{{(string)$item->User->name}}</td>
                             {{-- <td>{{(string)$item->user_id()->first()}}</td> --}}
                             {{-- <td>
                                 <form method="post" action="{{url('del/posts/'.$item->id)}}">
@@ -46,6 +48,5 @@
         @include('layout.PrintTrashed')
 
        
-
         
 {{-- @endsection --}}

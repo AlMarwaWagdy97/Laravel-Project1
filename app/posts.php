@@ -15,6 +15,12 @@ class posts extends Model
 
     //functionss//////////////////////////////////////
     public function user_id(){
-        return $this->hasOne('App\posts', 'id', 'user_id');
+        return $this->hasOne('App\User', 'id', 'user_id');
     }
+
+    public function user(){
+        return $this->hasOne('App\User', 'id', 'user_id');
+    }
+
+      
 }
